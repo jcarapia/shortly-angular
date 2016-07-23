@@ -6,7 +6,7 @@ angular.module('shortly.services', [])
     return $http({
     method: 'GET',
     url: '/api/links',
-    data: data
+    // data: data
   })
   .then(function(resp){
     console.log('................', resp);
@@ -15,6 +15,7 @@ angular.module('shortly.services', [])
   };
 
   var addLink = function (data) {
+    console.log('data............', data);
     return $http({
       method: 'POST',
       url: '/api/links',
