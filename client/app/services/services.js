@@ -12,8 +12,21 @@ angular.module('shortly.services', [])
     console.log('................', resp);
     return resp.data;
   })
-  }
+  };
+
+  var addLink = function (data) {
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: data
+    })
+    .then(function (resp) {
+      return resp.data;
+    });
+  };
+
   return {
+    addLink: addLink,
     getLinks: getLinks
   };
 })
